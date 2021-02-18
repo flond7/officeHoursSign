@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Template</title>
+
+  <!-- Meta -->
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Alternative to above: Disables zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Stylesheets -->
+  <link href="css/normalize.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>Slider</h1>
+    <p>Basic slider written in vanilla javascript</p>
+    <h2>fadeIn</h2>
+    <p>Fade slide in</p>
+    <div id="fadeSlider" class="sliderWrapper">
+      <div class="slider">
+        <div class="slide"><img src="http://placehold.it/320x160/3ee/333&text=1"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/e3e/333&text=2"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/ee3/333&text=3"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/33e/333&text=4"></div>
+      </div>
+    </div>
+    <h2>slideIn[side]</h2>
+    <p>Slide in from [side]</p>
+    <div id="sideSlider" class="sliderWrapper">
+      <div class="slider">
+        <div class="slide" slider-transition="slideInTop"><img src="http://placehold.it/320x160/3ee/333&text=1"></div>
+        <div class="slide" slider-transition="slideInRight"><img src="http://placehold.it/320x160/e3e/333&text=2"></div>
+        <div class="slide" slider-transition="slideInBottom"><img src="http://placehold.it/320x160/ee3/333&text=3"></div>
+        <div class="slide" slider-transition="slideInLeft"><img src="http://placehold.it/320x160/33e/333&text=4"></div>
+      </div>
+    </div>
+    <h2>slideIn[verticalside][horizontalside]</h2>
+    <p>Slide in from a corner</p>
+    <div id="cornerSlider" class="sliderWrapper">
+      <div class="slider">
+        <div class="slide" slider-transition="slideInTopLeft"><img src="http://placehold.it/320x160/3ee/333&text=1"></div>
+        <div class="slide" slider-transition="slideInTopRight"><img src="http://placehold.it/320x160/e3e/333&text=2"></div>
+        <div class="slide" slider-transition="slideInBottomRight"><img src="http://placehold.it/320x160/ee3/333&text=3"></div>
+        <div class="slide" slider-transition="slideInBottomLeft"><img src="http://placehold.it/320x160/33e/333&text=4"></div>
+      </div>
+    </div>
+    <h2>slideInHorizontal</h2>
+    <p>If slide is upcoming in the line, slide in from right side, otherwise slide in from left (suffix with "Reversed" for opposit).</p>
+    <div id="horizontalSlider" class="sliderWrapper">
+      <div class="slider">
+        <div class="slide"><img src="http://placehold.it/320x160/3ee/333&text=1"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/e3e/333&text=2"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/ee3/333&text=3"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/33e/333&text=4"></div>
+      </div>
+    </div>
+    <h2>slideInVertical</h2>
+    <p>If slide is upcoming in the line, slide in from top side, otherwise slide in from bottom (suffix with "Reversed" for opposit).</p>
+    <div id="verticalSlider" class="sliderWrapper">
+      <div class="slider">
+        <div class="slide"><img src="http://placehold.it/320x160/3ee/333&text=1"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/e3e/333&text=2"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/ee3/333&text=3"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/33e/333&text=4"></div>
+      </div>
+    </div>
+    <h2>pushInHorizontal</h2>
+    <p>All of the above is available as "push" as well (except for corner slide ins), an example of this effect can be seen below.</p>
+    <div id="pushHorizontalSlider" class="sliderWrapper">
+      <div class="slider">
+        <div class="slide"><img src="http://placehold.it/320x160/3ee/333&text=1"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/e3e/333&text=2"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/ee3/333&text=3"></div>
+        <div class="slide"><img src="http://placehold.it/320x160/33e/333&text=4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="js/slider.js"></script>
+  <script>
+    var fadeSlider = new slider('#fadeSlider', {transition: {effect: 'fadeIn', easing: 'linear'}});
+    var sideSlider = new slider('#sideSlider');
+    var cornerSlider = new slider('#cornerSlider');
+    var horizontalSlider = new slider('#horizontalSlider', {transition: {effect: 'slideInHorizontal'}});
+    var verticalSlider = new slider('#verticalSlider', {transition: {effect: 'slideInVertical'}});
+    var pushHorizontalSlider = new slider('#pushHorizontalSlider', {transition: {effect: 'pushInHorizontal'}});
+  </script>
+</body>
+</html>

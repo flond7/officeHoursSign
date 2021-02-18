@@ -1,0 +1,41 @@
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+  }
+  
+html, body {
+    height: 100%;
+    background-color: #333333 !important;
+    color: white !important;
+    font-size: 1.5em;
+}
+
+h1 {
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    color: #17a2b8 !important;
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.office {
+    border-bottom: solid #5e5e5e 1px;
+    margin: 3em, 0em;
+    padding: 2em, 0em;
+    align-items: center;
+}
+
+.col-head{
+    color: #17a2b8;
+}
+
+.container {
+    height: 100% !important;
+    max-width: 1500px !important
+}
