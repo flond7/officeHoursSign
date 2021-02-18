@@ -10,15 +10,23 @@ e non pageOne.
 */
 
 // tempo in cui la slide orari rimane visibile, in ms
-const timeDelay = 3000;
+const timeDelay = 15000;
+// tempo di aggiornamento della loading bar
+const timeTransitaion = 1000;
+const timeFrame = (0.95*timeDelay) / 100;
+// width iniziale per la loading bar
+var width = 0;
+var loadingInterval;
 
 window.onload = function () {
-    console.log("test");
-    var pageOne = document.getElementById("pageOne")
-    var pageTwo = document.getElementById("pageTwo")
-    var pageThree = document.getElementById("pageThree")
+    var pageOne = document.getElementById("pageOne");
+    var pageTwo = document.getElementById("pageTwo");
+    var pageThree = document.getElementById("pageThree");
+    pageTwo.style.display = "none";
+    pageThree.style.display = "none";
     fadeOutThree();
 };
+
 function fadeOutOne() {
     setTimeout(function () {
         pageOne.classList.remove("animate__fadeIn");
@@ -26,6 +34,7 @@ function fadeOutOne() {
         pageTwo.classList.add("animate__fadeIn");
         pageTwo.style.display = "block";
         fadeOutTwo();
+        loadingInterval = setInterval(loadBar, timeFrame);
     }, timeDelay);
 }
 
@@ -36,6 +45,7 @@ function fadeOutTwo() {
         pageThree.classList.add("animate__fadeIn");
         pageThree.style.display = "block";
         fadeOutThree();
+        loadingInterval = setInterval(loadBar, timeFrame);
     }, timeDelay);
 }
 
@@ -43,8 +53,20 @@ function fadeOutThree() {
     setTimeout(function () {
         pageThree.classList.remove("animate__fadeIn");
         pageThree.style.display = "none";
-        pageOne.style.display = "block";
         pageOne.classList.add("animate__fadeIn");
+        pageOne.style.display = "block";
         fadeOutOne();
+        loadingInterval = setInterval(loadBar, timeFrame);
     }, timeDelay);
+}
+
+function loadBar() {
+    var loading = document.getElementById("loading-bar");
+    if (width >= 100) {
+        width = 0;
+        clearInterval(loadingInterval);
+    } else {
+        width++;
+        loading.style.width = width + "%";
+    }
 }
