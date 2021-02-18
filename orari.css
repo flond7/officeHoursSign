@@ -1,7 +1,7 @@
 /* global css var */
 :root {
-    /*--animate-duration: 800ms;*/
-    --animate-delay: 1s;
+    --animate-duration: 800ms;
+    /* --animate-delay: 5s; */
     --blue: #1e90ff;
     --white: #ffffff;
     --off-gray: #5e5e5e;

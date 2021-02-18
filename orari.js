@@ -10,10 +10,10 @@ e non pageOne.
 */
 
 // tempo in cui la slide orari rimane visibile, in ms
-const timeDelay = 15000;
+const timeDelay = 7000;
 // tempo di aggiornamento della loading bar
-const timeTransitaion = 1000;
-const timeFrame = (0.95*timeDelay) / 100;
+const timeTransition = 800;
+const timeFrame = (timeDelay - timeTransition) / 100;
 // width iniziale per la loading bar
 var width = 0;
 var loadingInterval;
@@ -24,6 +24,7 @@ window.onload = function () {
     var pageThree = document.getElementById("pageThree");
     pageTwo.style.display = "none";
     pageThree.style.display = "none";
+    loadingInterval = setInterval(loadBar, timeFrame);
     fadeOutThree();
 };
 
