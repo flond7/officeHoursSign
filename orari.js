@@ -24,7 +24,7 @@ window.onload = function () {
     var pageThree = document.getElementById("pageThree");
     pageTwo.style.display = "none";
     pageThree.style.display = "none";
-    loadingInterval = setInterval(loadBar, timeFrame);
+    //loadingInterval = setInterval(loadBar, timeFrame);
     fadeOutThree();
 };
 
@@ -36,6 +36,7 @@ function fadeOutOne() {
         pageTwo.style.display = "block";
         fadeOutTwo();
         loadingInterval = setInterval(loadBar, timeFrame);
+        //console.log("fun 1 "+loadingInterval);
     }, timeDelay);
 }
 
@@ -47,6 +48,7 @@ function fadeOutTwo() {
         pageThree.style.display = "block";
         fadeOutThree();
         loadingInterval = setInterval(loadBar, timeFrame);
+        //console.log("fun 2 "+loadingInterval);
     }, timeDelay);
 }
 
@@ -58,6 +60,7 @@ function fadeOutThree() {
         pageOne.style.display = "block";
         fadeOutOne();
         loadingInterval = setInterval(loadBar, timeFrame);
+        //console.log("fun 3 "+loadingInterval);
     }, timeDelay);
 }
 
@@ -66,6 +69,7 @@ function loadBar() {
     if (width >= 100) {
         width = 0;
         clearInterval(loadingInterval);
+        //console.log("loadbar "+loadingInterval);
     } else {
         width++;
         loading.style.width = width + "%";
