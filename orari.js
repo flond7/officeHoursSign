@@ -9,14 +9,16 @@ e non pageOne.
 
 */
 
-// tempo in cui la slide orari rimane visibile, in ms
-const timeDelay = 18000;
-// tempo di aggiornamento della loading bar
-const timeTransition = 800;
+
+const timeDelay = 18000;    // tempo in cui la slide orari rimane visibile, in ms
+const timeTransition = 800; // tempo di aggiornamento della loading bar
 const timeFrame = (timeDelay - timeTransition) / 100;
-// width iniziale per la loading bar
-var width = 0;
+
+var width = 0;              // width iniziale per la loading bar
 var loadingInterval;
+
+var hightlightTime = 6000;  // tempo in cui l'avviso è evidenziato
+var i = 1;                  // 1 per poter semplificare il ciclo if else
 
 window.onload = function () {
     var pageOne = document.getElementById("pageOne");
@@ -24,8 +26,8 @@ window.onload = function () {
     var pageThree = document.getElementById("pageThree");
     pageTwo.style.display = "none";
     pageThree.style.display = "none";
-    //loadingInterval = setInterval(loadBar, timeFrame);
     fadeOutThree();
+    highlight();
 };
 
 function fadeOutOne() {
@@ -36,7 +38,6 @@ function fadeOutOne() {
         pageTwo.style.display = "block";
         fadeOutTwo();
         loadingInterval = setInterval(loadBar, timeFrame);
-        //console.log("fun 1 "+loadingInterval);
     }, timeDelay);
 }
 
@@ -48,7 +49,6 @@ function fadeOutTwo() {
         pageThree.style.display = "block";
         fadeOutThree();
         loadingInterval = setInterval(loadBar, timeFrame);
-        //console.log("fun 2 "+loadingInterval);
     }, timeDelay);
 }
 
@@ -60,7 +60,6 @@ function fadeOutThree() {
         pageOne.style.display = "block";
         fadeOutOne();
         loadingInterval = setInterval(loadBar, timeFrame);
-        //console.log("fun 3 "+loadingInterval);
     }, timeDelay);
 }
 
@@ -69,9 +68,26 @@ function loadBar() {
     if (width >= 100) {
         width = 0;
         clearInterval(loadingInterval);
-        //console.log("loadbar "+loadingInterval);
     } else {
         width++;
         loading.style.width = width + "%";
     }
+}
+
+function highlight() {
+    var avvisi = document.getElementsByClassName('avviso');
+    setTimeout(function () {
+        if (i < avvisi.length) {
+            avvisi[i - 1].classList.remove("highlighted");
+            avvisi[i].classList.add("highlighted");
+            i++;
+        } else {
+            i = 0;
+            let n = avvisi.length - 1;
+            avvisi[n].classList.remove("highlighted");
+            avvisi[i].classList.add("highlighted");
+            i++;
+        };
+        highlight()
+    },hightlightTime);
 }
