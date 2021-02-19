@@ -1,5 +1,12 @@
-/* global css var */
+/*
 
+ATTTTTTENZIONE
+Il televisore prende solo i file min css quindi minimizzare
+
+*/
+
+
+/* global css var */
 :root {
     --animate-duration: 800ms;
     /* --animate-delay: 5s; */
@@ -52,8 +59,8 @@ p {
 }
 
 .container {
-    height: 100% !important;
-    max-width: 1500px !important
+    /*height: 100% !important;*/
+    max-width: 1700px !important
 }
 
 /* LOADER */
