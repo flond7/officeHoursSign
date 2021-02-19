@@ -2,7 +2,7 @@
 :root {
     --animate-duration: 800ms;
     /* --animate-delay: 5s; */
-    --blue: #1e90ff;
+    --yel: #ebd408;
     --white: #ffffff;
     --off-gray: #5e5e5e;
     --dark: #333333;
@@ -20,7 +20,7 @@ h1 {
 }
 
 h3 {
-    color: var(--blue) !important;
+    color: var(--yel) !important;
     margin: 0;
     padding: 0;
 }
@@ -38,7 +38,7 @@ p {
 }
 
 .col-head {
-    color: var(--blue);
+    color: var(--yel);
 }
 
 .container {
@@ -57,5 +57,5 @@ p {
     height: 2%;
     position: fixed;
     bottom: 0;
-    background-color: var(--blue);
+    background-color: var(--yel);
 }
