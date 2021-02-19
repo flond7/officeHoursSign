@@ -10,7 +10,7 @@ e non pageOne.
 */
 
 // tempo in cui la slide orari rimane visibile, in ms
-const timeDelay = 12000;
+const timeDelay = 18000;
 // tempo di aggiornamento della loading bar
 const timeTransition = 800;
 const timeFrame = (timeDelay - timeTransition) / 100;
