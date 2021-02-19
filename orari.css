@@ -57,6 +57,11 @@ p {
 .col-head {
     color: var(--yel);
 }
+.highlighted {
+    background-color: var(--yel);
+    color: var(--dark);
+    padding: 1em auto !important;
+}
 
 .container {
     /*height: 100% !important;*/
