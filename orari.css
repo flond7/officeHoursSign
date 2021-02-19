@@ -1,4 +1,5 @@
 /* global css var */
+
 :root {
     --animate-duration: 800ms;
     /* --animate-delay: 5s; */
@@ -32,9 +33,18 @@ p {
 
 .office {
     border-bottom: solid var(--off-gray) 1px;
-    margin: 3em, 0em;
-    padding: 2em, 0em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.8em;
     align-items: center;
+}
+
+.border-gray {
+    border-bottom: solid var(--off-gray) 1px;
+}
+
+.avviso {
+    margin-bottom: 0.8em;
+    padding-bottom: 0.8em;
 }
 
 .col-head {
@@ -47,12 +57,14 @@ p {
 }
 
 /* LOADER */
+
 #loader-container {
     height: 2%;
     width: 100%;
     position: fixed;
     bottom: 0;
 }
+
 #loading-bar {
     height: 2%;
     position: fixed;
