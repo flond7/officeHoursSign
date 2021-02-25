@@ -24,19 +24,19 @@ $i = 0;
   echo '<div id="' . $pages_id[$i] . '" class="animate__animated animate__fadeIn">'
   ?>
 
-  <!-- <div id="" class="animate__animated animate__fadeIn"> -->
+
   <?php foreach ($j_page as $key => $value) : ?>
     <div class="row no-gutters align-items-start office">
       <div class="col-4">
         <h3 class=""><?= $value["ufficio"]; ?></h3>
         <p>Responsabile </br><?= $value["resp"]; ?></p>
       </div>
+ 
       <div class="col-8">
 
         <? if ($value["hide_note"] == "no"): ?>
-        <?= $value["note"]; ?>
+          <?= $value["note"]; ?>
         <? endif ?>
-
 
         <?php if ($value["hide_orari"] == "no") : ?>
           <div class="row">
@@ -63,14 +63,13 @@ $i = 0;
           <div class="col-10"><?= $value["mail"]; ?></div>
         </div>
 
-
       </div>
     </div>
   <?php endforeach; ?>
 
   <!-- this closes the div opened with echo in php -->
   <?php
-  $i++;
-  echo '</div>'
+    $i++;
+    echo '</div>'
   ?>
 <?php endforeach; ?>
