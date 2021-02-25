@@ -1,0 +1,85 @@
+/*
+
+ATTTTTTENZIONE
+Il televisore prende solo i file min css quindi minimizzare
+
+*/
+
+
+/* global css var */
+:root {
+    --animate-duration: 800ms;
+    /* --animate-delay: 5s; */
+    --yel: #ebd408;
+    --white: #ffffff;
+    --off-gray: #5e5e5e;
+    --dark: #333333;
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--dark) !important;
+    color: white !important;
+    font-size: 1.5em;
+}
+
+h1 {
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--yel) !important;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.office {
+    border-bottom: solid var(--off-gray) 1px;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.8em;
+    align-items: center;
+}
+
+.border-gray {
+    border-bottom: solid var(--off-gray) 1px;
+}
+
+.avviso {
+    margin-bottom: 0.8em;
+    padding-bottom: 0.8em;
+}
+
+.col-head {
+    color: var(--yel);
+}
+.highlighted {
+    background-color: var(--yel);
+    color: var(--dark);
+    padding: 1em auto !important;
+}
+
+.container {
+    /*height: 100% !important;*/
+    max-width: 1700px !important
+}
+
+/* LOADER */
+
+#loader-container {
+    height: 2%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+#loading-bar {
+    height: 2%;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--yel);
+}
