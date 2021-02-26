@@ -18,7 +18,7 @@
         <?php require('includes/avvisi_vert.php'); ?>
       </div>
 
-      <div class="col-12 h-75 pt-5 uffici">
+      <div class="col-12 h-75 pt-5">
         <h1 class="w-100 border-bottom text-center">Uffici</h1>
         <!-- uffici -->
         <?php require('includes/uffici_vert.php'); ?>
