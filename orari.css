@@ -25,6 +25,7 @@ html, body {
 
 h1 {
     padding-bottom: 0.5rem;
+    letter-spacing: 5px;
 }
 
 h3 {
@@ -54,29 +55,31 @@ p {
     padding-bottom: 0.8em;
 }
 
-.col-head {
-    color: var(--yel);
-}
+.col-head {color: var(--yel);}
+
 .highlighted {
     background-color: var(--yel);
     color: var(--dark);
-    padding: 1em auto !important;
+    padding: 1em !important;
 }
 
-.container {
-    /*height: 100% !important;*/
-    max-width: 1700px !important
-}
+.container_hor {max-width: 1700px !important;}
+
+.h-10 {height: 10vh !important;}
+.h-60 {height: 60vh !important;}
+.w-90 {width:90%!important;}
+.low {
+    position: fixed; 
+    bottom: 8% !important;}
+
 
 /* LOADER */
-
 #loader-container {
     height: 2%;
     width: 100%;
     position: fixed;
     bottom: 0;
 }
-
 #loading-bar {
     height: 2%;
     position: fixed;
