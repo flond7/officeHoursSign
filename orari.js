@@ -7,30 +7,69 @@ pageFour e comparire il pageOne.
 Modificare la funzione fadeOutThree perchè a comparire sia pageFour
 e non pageOne.
 
+If you need to add other pages
+1 - add a var with the page name as getElementById
+2 - add a display none to the new page
+3 - add the var to the page array
+
+
 */
 
-
-const timeDelay = 18000;    // tempo in cui la slide orari rimane visibile, in ms
-const timeTransition = 800; // tempo di aggiornamento della loading bar
+const timeDelay = 18000;    // how long the page stays visible, in ms
+const timeTransition = 800; // transition time
 const timeFrame = (timeDelay - timeTransition) / 100;
 
-var width = 0;              // width iniziale per la loading bar
+var width = 0;              // loading bar initial width
 var loadingInterval;
 
-var hightlightTime = 6000;  // tempo in cui l'avviso è evidenziato
-var i = 1;                  // 1 per poter semplificare il ciclo if else
+var hightlightTime = 6000;  // how long notices are highlighted
+var i = 1;                  // start with one to simplify if else cycle for notices
+
+var pages = [];
+var j = 1;
 
 window.onload = function () {
+
     var pageOne = document.getElementById("pageOne");
     var pageTwo = document.getElementById("pageTwo");
     var pageThree = document.getElementById("pageThree");
+    /* if you add other pages add the getElementById here */
+
     pageTwo.style.display = "none";
     pageThree.style.display = "none";
-    fadeOutThree();
+    /* if you add other pages add the display: none here */
+
+    pages = [pageOne, pageTwo, pageThree];
+    /* if you add other page add the name in the array above */
+
+    loadingInterval = setInterval(loadBar, timeFrame);
+    fade();
     highlight();
 };
 
-function fadeOutOne() {
+function fade() {
+    setTimeout(function () {
+        if (j < pages.length) {
+            pages[j - 1].classList.remove("animate__fadeIn");
+            pages[j - 1].style.display = "none";
+            pages[j].classList.add("animate__fadeIn");
+            pages[j].style.display = "block";
+            j++;
+        } else {
+            j = 0;
+            let n = pages.length - 1;
+            pages[n].classList.remove("animate__fadeIn");
+            pages[n].style.display = "none";
+            pages[j].classList.add("animate__fadeIn");
+            pages[j].style.display = "block";
+            j++;
+        };
+        loadingInterval = setInterval(loadBar, timeFrame);
+        fade();
+    }, timeDelay);
+}
+
+/* function fadeOutOne() {
     setTimeout(function () {
         pageOne.classList.remove("animate__fadeIn");
         pageOne.style.display = "none";
@@ -61,7 +100,7 @@ function fadeOutThree() {
         fadeOutOne();
         loadingInterval = setInterval(loadBar, timeFrame);
     }, timeDelay);
-}
+} */
 
 function loadBar() {
     var loading = document.getElementById("loading-bar");
@@ -89,5 +128,5 @@ function highlight() {
             i++;
         };
         highlight()
-    },hightlightTime);
+    }, hightlightTime);
 }
