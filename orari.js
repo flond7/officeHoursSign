@@ -42,6 +42,7 @@ window.onload = function () {
     pages = [pageOne, pageTwo, pageThree];
     /* if you add other page add the name in the array above */
 
+    loadingInterval = setInterval(loadBar, timeFrame);
     fade();
     highlight();
 };
@@ -65,59 +66,6 @@ function fade() {
         };
         loadingInterval = setInterval(loadBar, timeFrame);
         fade();
-    }, timeDelay);
-}
-
-function fade_e() {
-    loadingInterval = setInterval(loadBar, timeFrame);
-    setTimeout(function () {
-        if (j >= pages.length) {
-            j = 0;
-            currentPage = pages[j];
-            previousPage = pages[pages.length - 1];
-        } else {
-            currentPage = pages[j];
-            previousPage = pages[j - 1];
-        }
-        previousPage.classList.remove("animate__fadeIn");
-        previousPage.style.display = "none";
-        currentPage.classList.add("animate__fadeIn");
-        currentPage.style.display = "block";
-        j++;
-        fade();
-    }, timeDelay);
-}
-
-function fadeOutOne() {
-    setTimeout(function () {
-        pageOne.classList.remove("animate__fadeIn");
-        pageOne.style.display = "none";
-        pageTwo.classList.add("animate__fadeIn");
-        pageTwo.style.display = "block";
-        fadeOutTwo();
-        loadingInterval = setInterval(loadBar, timeFrame);
-    }, timeDelay);
-}
-
-function fadeOutTwo() {
-    setTimeout(function () {
-        pageTwo.classList.remove("animate__fadeIn");
-        pageTwo.style.display = "none";
-        pageThree.classList.add("animate__fadeIn");
-        pageThree.style.display = "block";
-        fadeOutThree();
-        loadingInterval = setInterval(loadBar, timeFrame);
-    }, timeDelay);
-}
-
-function fadeOutThree() {
-    setTimeout(function () {
-        pageThree.classList.remove("animate__fadeIn");
-        pageThree.style.display = "none";
-        pageOne.classList.add("animate__fadeIn");
-        pageOne.style.display = "block";
-        fadeOutOne();
-        loadingInterval = setInterval(loadBar, timeFrame);
     }, timeDelay);
 }
 

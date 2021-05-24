@@ -27,12 +27,12 @@ $i = 0;
 
   <?php foreach ($j_page as $key => $value) : ?>
     <div class="row no-gutters align-items-start office">
-      <div class="col-4">
+      <div class="col-5">
         <h3 class=""><?= $value["ufficio"]; ?></h3>
         <p>Responsabile </br><?= $value["resp"]; ?></p>
       </div>
  
-      <div class="col-8">
+      <div class="col-7">
 
         <? if ($value["hide_note"] == "no"): ?>
           <?= $value["note"]; ?>

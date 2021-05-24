@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container d-flex align-items-start mt-5">
+    <div class="container container_hor d-flex align-items-start mt-5">
         <div class="row">
 
             <div class="col-9">
