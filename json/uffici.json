@@ -12,4 +12,4 @@
   { "ufficio":"Segreteria","resp":"Dott. Graziano Brocca","mail":"segreteria@comune.aviano.pn.it","tel":["0434 666-505", "0434 666-516"],"hide_orari":"si","orari":["LUN: 10.00 - 12.00","MAR: 10.00 - 12.00","MER: 10.00 - 12.00","GIO: 10.00 - 12.00", "VEN: 10.00 - 12.00"],"hide_note":"no","note": "Per prenotare un appuntamento contattare l'ufficio"},
   { "ufficio":"Tributi","resp":"Dott.ssa Paola Bosser","mail":"tributi@comune.aviano.pn.it","tel":["0434 666-535", "0434 666-536"],"hide_orari":"si","orari":["LUN: 10.00 - 12.00","MAR: 10.00 - 12.00","MER: 10.00 - 12.00","GIO: 10.00 - 12.00", "VEN: 10.00 - 12.00"],"hide_note":"no", "note": "Per prenotare un appuntamento contattare l'ufficio"},
   { "ufficio":"URP","resp":"Dott.ssa Teresina Russignaga","mail":"urp@comune.aviano.pn.it","tel":["0434 666-593"],"hide_orari":"si","orari":["LUN: 10.00 - 12.00","MAR: 10.00 - 12.00","MER: 10.00 - 12.00","GIO: 10.00 - 12.00", "VEN: 10.00 - 12.00"],"hide_note":"no","note": "Per prenotare un appuntamento contattare l'ufficio"}
-]
+] 
